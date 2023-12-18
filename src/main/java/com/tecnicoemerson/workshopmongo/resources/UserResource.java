@@ -1,4 +1,4 @@
-package com.tecnicoemerson.workshopmongodb.resources;
+package com.tecnicoemerson.workshopmongo.resources;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tecnicoemerson.workshopmongodb.domain.User;
-import com.tecnicoemerson.workshopmongodb.services.UserService;
+import com.tecnicoemerson.workshopmongo.domain.User;
+import com.tecnicoemerson.workshopmongo.services.UserService;
 
 @RestController
 @RequestMapping(value="/users")
@@ -17,11 +17,10 @@ public class UserResource {
 
 	@Autowired
 	private UserService service;
-	
+
 	@GetMapping
-	public ResponseEntity<List<User>> findAll(){
+ 	public ResponseEntity<List<User>> findAll() {
 		List<User> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
-	
 }
